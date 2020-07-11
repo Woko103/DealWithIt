@@ -9,11 +9,24 @@ MeshCollider:
   m_GameObject: {fileID: 135666127694757230}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2092257039272996574, guid: f5cedff82cf0cf54db2c1803a0bd6f7e, type: 3}
+--- !u!65 &6791140476280396653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135666127694757230}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6190887, y: 0.5406437, z: 0.52587247}
+  m_Center: {x: -0.19045565, y: -0.012983322, z: 0.002388075}
 --- !u!1 &4750910478019880206
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,9 +68,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8997215217916539022}
   - component: {fileID: 8826376282187116688}
+  - component: {fileID: -5146603773882635212}
   m_Layer: 0
   m_Name: Can
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +108,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &-5146603773882635212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5839753346556615058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6597036747523246482
 GameObject:
   m_ObjectHideFlags: 0
