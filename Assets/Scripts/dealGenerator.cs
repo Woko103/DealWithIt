@@ -33,10 +33,10 @@ public class dealGenerator : MonoBehaviour
             deal = Instantiate(dealPrefab, dealPositions[0], Quaternion.identity);
             dealPositions.RemoveAt(r);
 
-            if (dealPositions.Count == 0)
-            {
-                FindObjectOfType<gameManager>().endGame();
-            }
+            //if (dealPositions.Count == 0)
+            //{
+            //    FindObjectOfType<gameManager>().endGame();
+            //}
             
             dealExists = true;
         }
