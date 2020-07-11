@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TimerController : MonoBehaviour
 {
     public int countTime;
-    public Text display;
+    public TextMeshProUGUI display;
 
     private void Start(){
         StartCoroutine(CountdownToStart());

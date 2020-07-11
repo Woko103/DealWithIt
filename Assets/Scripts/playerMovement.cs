@@ -51,13 +51,13 @@ public class playerMovement : MonoBehaviour
             //Right move
             if (Input.GetKey("d"))
             {
-                rb.MovePosition(new Vector3(rb.position.x+6f*Time.deltaTime*Camera.main.transform.right.x,rb.position.y,rb.position.z));
+                rb.position = rb.position + Camera.main.transform.right * 5f * Time.deltaTime;
                 --timerD;
             }
             //Left move
             else if (Input.GetKey("a"))
             {
-                rb.MovePosition(new Vector3(rb.position.x-6f*Time.deltaTime*Camera.main.transform.right.x,rb.position.y,rb.position.z));
+                rb.position = rb.position + Camera.main.transform.right * -5f * Time.deltaTime;
                 --timerA;
             }
             //Jump
