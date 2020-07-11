@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class playerCollision : MonoBehaviour
 {
     public playerMovement movement;
+    
 
     private void OnCollisionEnter(Collision collisionInfo)
     {
@@ -17,6 +18,8 @@ public class playerCollision : MonoBehaviour
             if (collisionInfo.transform.position.y < 0.2)
             {
                 FindObjectOfType<dealGenerator>().createDeal();
+                int actualTime = FindObjectOfType<TimerController>().countTime;
+                FindObjectOfType<ScoreController>().moreScore(50 + 30 + actualTime);
                 if(transform.rotation.y > -0.2 && transform.rotation.y < 0.2)
                     collisionInfo.transform.position = transform.position + new Vector3(0,0.75f,0.6f);
                 else if(transform.rotation.y > 0.6 && transform.rotation.y < 0.8)

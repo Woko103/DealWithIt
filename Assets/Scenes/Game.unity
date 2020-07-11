@@ -203,21 +203,31 @@ PrefabInstance:
     - target: {fileID: 146033863068626045, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 146033863068626045, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 146033863068626045, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 146033863068626045, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146033863068626045, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
+        type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 417556129028120026, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 417556129737883731, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
@@ -329,6 +339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493535555922636023, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
+        type: 3}
+      propertyPath: scoreCount
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9219051998770718269, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
         type: 3}
@@ -832,6 +847,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 1057833269}
+--- !u!1 &1121445230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4336564757182924198, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 370226761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1258291927
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,6 +882,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36ba421eb839374091c33a593f214b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseScreen: {fileID: 1503043379}
+  winScreen: {fileID: 1121445230}
 --- !u!4 &1258291929
 Transform:
   m_ObjectHideFlags: 0
@@ -1163,6 +1186,12 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1503043379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 417556129028120026, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
+    type: 3}
+  m_PrefabInstance: {fileID: 370226761}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1694409082
 GameObject:
   m_ObjectHideFlags: 0
