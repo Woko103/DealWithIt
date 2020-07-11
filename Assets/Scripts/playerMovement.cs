@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class playerMovement : MonoBehaviour
 {
     public Rigidbody rb;
-    public float forwardForce = 400f;
+    public float forwardForce = 4f;
     private bool isGrounded;
 
     // Update is called once per frame
@@ -12,8 +12,9 @@ public class playerMovement : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
-            //forwardForce += 0.4f;
-            rb.MovePosition(new Vector3(rb.position.x,rb.position.y,rb.position.z+4f*Time.deltaTime));
+            float x = rb.rotation.y;
+            float z = rb.rotation.y - 1;
+            rb.MovePosition(new Vector3(rb.position.x * (1+x),rb.position.y,rb.position.z+forwardForce*Time.deltaTime*z));
 
             //Right move
             if (Input.GetKey("d"))
