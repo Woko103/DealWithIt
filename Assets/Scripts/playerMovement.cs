@@ -61,9 +61,9 @@ public class playerMovement : MonoBehaviour
                 --timerA;
             }
             //Jump
-            if (isGrounded && Input.GetKeyDown("space"))
+            if (isGrounded && Input.GetKey("space"))
             {
-                rb.AddForce(0,120*Time.deltaTime,0,ForceMode.VelocityChange);
+                rb.AddForce(0,100*Time.deltaTime,0,ForceMode.VelocityChange);
             }
 
             //Rotate to left
