@@ -12,6 +12,8 @@ public class playerMovement : MonoBehaviour
     private int DrotateTime = 21;
     private int ArotateTime = 21;
     public TimerController timeText;
+    private bool wet = false;
+    private int wetCount = 200;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -19,8 +21,18 @@ public class playerMovement : MonoBehaviour
         if (Time.timeScale == 1)
         {
             if(timeText.countTime > 20){
-                Debug.Log("Entra");
-                rb.position = rb.position + Camera.main.transform.forward * forwardForce * Time.deltaTime;
+                if(wet){
+                    rb.position = rb.position + Camera.main.transform.forward * forwardForce * 2 * Time.deltaTime;
+
+                    wetCount--;
+                    if(wetCount == 0){
+                        wet = false;
+                        wetCount = 200;
+                    }  
+                }
+                else{
+                    rb.position = rb.position + Camera.main.transform.forward * forwardForce * Time.deltaTime;
+                }
             }
             else{
                 rb.position = rb.position + Camera.main.transform.forward * forwardForce * 2 * Time.deltaTime;
@@ -96,6 +108,12 @@ public class playerMovement : MonoBehaviour
         if (collisionInfo.collider.tag == "Ground")
         {
             isGrounded = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider collisionInfo){
+        if(collisionInfo.tag == "WetFloor" && !wet){
+            wet = true;
         }
     }
     private void setGroundedToTrue()

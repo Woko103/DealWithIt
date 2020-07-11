@@ -388,7 +388,7 @@ PrefabInstance:
     - target: {fileID: 457860336189017507, guid: d47d7fad834913c4ba7eb047910640de,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7538192
+      value: 15.53
       objectReference: {fileID: 0}
     - target: {fileID: 457860336189017507, guid: d47d7fad834913c4ba7eb047910640de,
         type: 3}
@@ -445,8 +445,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: WetFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 2217766404014705005, guid: d47d7fad834913c4ba7eb047910640de,
+        type: 3}
+      propertyPath: m_TagString
+      value: WetFloor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d47d7fad834913c4ba7eb047910640de, type: 3}
+--- !u!1 &858486109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2217766404014705005, guid: d47d7fad834913c4ba7eb047910640de,
+    type: 3}
+  m_PrefabInstance: {fileID: 676940432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &858486110
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858486109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.17, y: 1, z: 2.64}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &894155858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -804,6 +828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1057833270}
   forwardForce: 7
+  timeText: {fileID: 1599319562}
 --- !u!54 &1057833270
 Rigidbody:
   m_ObjectHideFlags: 0
