@@ -8,6 +8,8 @@ public class playerMovement : MonoBehaviour
     private bool isGrounded;
     private int timerD = 50;
     private int timerA = 50;
+    private int DrotateTime = 21;
+    private int ArotateTime = 21;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -47,14 +49,29 @@ public class playerMovement : MonoBehaviour
             //Rotate to left
             if (timerA == 0)
             {
-                rb.rotation *= Quaternion.Euler(0,-90,0);
+                --ArotateTime;
                 timerA = 50;
             }
             //Rotate to right
             if (timerD == 0)
             {
-                rb.rotation *= Quaternion.Euler(0,90,0);
+                --DrotateTime;
                 timerD = 50;
+            }
+
+            if (ArotateTime < 21)
+            {
+                rb.rotation *= Quaternion.Euler(0,-4.5f,0);
+                --ArotateTime;
+                if(ArotateTime == 0)
+                    ArotateTime = 21;
+            }
+            if (DrotateTime < 21)
+            {
+                rb.rotation *= Quaternion.Euler(0,4.5f,0);
+                --DrotateTime;
+                if(DrotateTime == 0)
+                    DrotateTime = 21;
             }
         }
     }

@@ -6,6 +6,14 @@ public class dealGenerator : MonoBehaviour
 { 
     public Transform dealPrefab;
     private bool dealExists = false;
+    List<Vector3> dealPositions = new List<Vector3>();
+
+    void Start()
+    {
+        dealPositions.Add(new Vector3(0,0,10));
+        //dealPositions.Add(new Vector3(5,0,13));
+        //dealPositions.Add(new Vector3(-5,0,13));
+    }
 
     void FixedUpdate ()
     {
@@ -15,9 +23,22 @@ public class dealGenerator : MonoBehaviour
         }
     }
 
-    public void createDeal() {
-        Transform deal = null;
-        deal = Instantiate(dealPrefab, new Vector3(0, 1, 10), Quaternion.identity);
-        dealExists = true;
+    public void createDeal()
+    {
+        if (dealPositions.Count > 0)
+        {
+            Transform deal = null;
+            int r = Random.Range(0,dealPositions.Count);
+
+            deal = Instantiate(dealPrefab, dealPositions[0], Quaternion.identity);
+            dealPositions.RemoveAt(r);
+
+            if (dealPositions.Count == 0)
+            {
+                FindObjectOfType<gameManager>().endGame();
+            }
+            
+            dealExists = true;
+        }
     }
 }
