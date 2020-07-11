@@ -12,5 +12,10 @@ public class playerCollision : MonoBehaviour
             movement.enabled = false;
             FindObjectOfType<gameManager>().endGame();
         }
+        if (collisionInfo.collider.tag == "Deal")
+        {
+            FindObjectOfType<dealGenerator>().createDeal();
+            collisionInfo.transform.position = transform.position + new Vector3(0,1,0);
+        }
     }
 }
