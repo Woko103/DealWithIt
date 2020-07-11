@@ -5,6 +5,7 @@ using UnityEngine;
 public class dealGenerator : MonoBehaviour
 { 
     public Transform dealPrefab;
+    public Transform goal;
     private bool dealExists = false;
     List<Vector3> dealPositions = new List<Vector3>();
 
@@ -33,9 +34,13 @@ public class dealGenerator : MonoBehaviour
             deal = Instantiate(dealPrefab, dealPositions[0], Quaternion.identity);
             dealPositions.RemoveAt(r);
 
+            //Hacer switch y cambiar 0 por r
+
+            goal.transform.position = deal.transform.position + new Vector3(0f,4f,0f);
+
             //if (dealPositions.Count == 0)
             //{
-            //    FindObjectOfType<gameManager>().endGame();
+            //    FindObjectOfType<gameManager>().winGame();
             //}
             
             dealExists = true;
