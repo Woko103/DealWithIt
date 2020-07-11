@@ -5,7 +5,7 @@ using UnityEngine;
 public class pauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
-    public AudioSource mainAudio;
+    //public AudioSource mainAudio;
     void Update()
     {
         //Resume
@@ -13,7 +13,7 @@ public class pauseMenu : MonoBehaviour
         {
             pauseMenuUI.SetActive(false);
             Time.timeScale = 1f;
-            mainAudio.Play();
+            //mainAudio.Play();
         }
         //Pause
         else if (Input.GetKeyDown(KeyCode.Escape))
@@ -22,7 +22,7 @@ public class pauseMenu : MonoBehaviour
             {
                 pauseMenuUI.SetActive(true);
                 Time.timeScale = 0f;
-                mainAudio.Pause();
+                //mainAudio.Pause();
             }
         }
     }

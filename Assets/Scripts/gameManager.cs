@@ -20,6 +20,8 @@ public class gameManager : MonoBehaviour
     void showLoseScreen ()
     {
         loseScreen.SetActive(true);
+        Time.timeScale = 0f;
+        //mainAudio.Pause();
     }
 
     public void winGame()
@@ -34,5 +36,7 @@ public class gameManager : MonoBehaviour
     void showWinScreen ()
     {
         winScreen.SetActive(true);
+        Time.timeScale = 0f;
+        //mainAudio.Pause();
     }
 }
