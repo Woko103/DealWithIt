@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
@@ -10,13 +11,20 @@ public class playerMovement : MonoBehaviour
     private int timerA = 50;
     private int DrotateTime = 21;
     private int ArotateTime = 21;
+    public TimerController timeText;
 
     // Update is called once per frame
     void FixedUpdate()
     {
         if (Time.timeScale == 1)
         {
-            rb.position = rb.position + Camera.main.transform.forward * forwardForce * Time.deltaTime;
+            if(timeText.countTime > 20){
+                Debug.Log("Entra");
+                rb.position = rb.position + Camera.main.transform.forward * forwardForce * Time.deltaTime;
+            }
+            else{
+                rb.position = rb.position + Camera.main.transform.forward * forwardForce * 2 * Time.deltaTime;
+            }
 
             //When you stop holding the button, the rotation timer stops
             if (Input.GetKeyUp("d"))
