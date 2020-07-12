@@ -6,6 +6,7 @@ public class playerCollision : MonoBehaviour
     public playerMovement movement;
     public AudioSource crash;
     public AudioSource pickDeal;
+    public AudioSource cans;
 
     void Start(){
         crash.volume = 0.5f;
@@ -27,7 +28,7 @@ public class playerCollision : MonoBehaviour
             {
                 FindObjectOfType<dealGenerator>().createDeal();
                 int actualTime = FindObjectOfType<TimerController>().countTime;
-                FindObjectOfType<ScoreController>().moreScore(50 + 30 + actualTime);
+                FindObjectOfType<ScoreController>().moreScore(50 + 60 + actualTime);
                 if(transform.rotation.y > -0.2 && transform.rotation.y < 0.2)
                     collisionInfo.transform.position = transform.position + new Vector3(0,0.75f,0.6f);
                 else if(transform.rotation.y > 0.6 && transform.rotation.y < 0.8)
@@ -40,6 +41,9 @@ public class playerCollision : MonoBehaviour
                 collisionInfo.transform.parent = GameObject.Find("Player").transform;
                 collisionInfo.rigidbody.isKinematic = true;
             }
+        }
+        if(collisionInfo.collider.tag == "Can"){
+            cans.Play();
         }
     }
 }

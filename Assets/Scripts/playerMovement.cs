@@ -14,6 +14,7 @@ public class playerMovement : MonoBehaviour
     public TimerController timeText;
     private bool wet = false;
     private int wetCount = 200;
+    public AudioSource water;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -151,6 +152,7 @@ public class playerMovement : MonoBehaviour
     private void OnTriggerEnter(Collider collisionInfo){
         if(collisionInfo.tag == "WetFloor" && !wet){
             wet = true;
+            water.Play();
         }
     }
     private void setGroundedToTrue()

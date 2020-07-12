@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: -5146603773882635212}
   m_Layer: 0
   m_Name: Can
-  m_TagString: Obstacle
+  m_TagString: Can
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f5cedff82cf0cf54db2c1803a0bd6f7e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f5cedff82cf0cf54db2c1803a0bd6f7e,
         type: 3}
@@ -218,6 +218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CanCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f5cedff82cf0cf54db2c1803a0bd6f7e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Can
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -7511558181221131132, guid: f5cedff82cf0cf54db2c1803a0bd6f7e, type: 3}
