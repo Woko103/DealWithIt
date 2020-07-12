@@ -23,6 +23,10 @@ public class gameManager : MonoBehaviour
         inGameMusic.volume = 0.5f;
     }
 
+    void Update(){
+        inGameMusic.pitch += Time.deltaTime / 700;
+    }
+
     public void loadInGameMusic(){
         inGameMusic.Play();
     }
