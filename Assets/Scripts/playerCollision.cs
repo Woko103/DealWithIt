@@ -4,17 +4,25 @@ using UnityEngine.SceneManagement;
 public class playerCollision : MonoBehaviour
 {
     public playerMovement movement;
-    
+    public AudioSource crash;
+    public AudioSource pickDeal;
+
+    void Start(){
+        crash.volume = 0.5f;
+        pickDeal.volume = 0.5f;
+    }
 
     private void OnCollisionEnter(Collision collisionInfo)
     {
         if (collisionInfo.collider.tag == "Obstacle")
         {
+            crash.Play();
             movement.enabled = false;
             FindObjectOfType<gameManager>().endGame();
         }
         if (collisionInfo.collider.tag == "Deal")
         {
+            pickDeal.Play();
             if (collisionInfo.transform.position.y < 0.2)
             {
                 FindObjectOfType<dealGenerator>().createDeal();
