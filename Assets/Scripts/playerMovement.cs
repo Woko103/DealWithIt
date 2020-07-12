@@ -39,23 +39,23 @@ public class playerMovement : MonoBehaviour
             }
 
             //When you stop holding the button, the rotation timer stops
-            if (Input.GetKeyUp("d"))
+            if (Input.GetKeyUp("d") || Input.GetKeyUp("right"))
             {
                 timerD = 50;
             }
-            if (Input.GetKeyUp("a"))
+            if (Input.GetKeyUp("a") || Input.GetKeyUp("left"))
             {
                 timerA = 50;
             }
 
             //Right move
-            if (Input.GetKey("d"))
+            if (Input.GetKey("d") || Input.GetKey("right"))
             {
                 rb.position = rb.position + gameObject.transform.right * 5f * Time.deltaTime;
                 --timerD;
             }
             //Left move
-            else if (Input.GetKey("a"))
+            else if (Input.GetKey("a") || Input.GetKey("left"))
             {
                 rb.position = rb.position + gameObject.transform.right * -5f * Time.deltaTime;
                 --timerA;
