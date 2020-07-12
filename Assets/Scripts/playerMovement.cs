@@ -22,7 +22,7 @@ public class playerMovement : MonoBehaviour
         {
             if(timeText.countTime > 20){
                 if(wet){
-                    rb.position = rb.position + Camera.main.transform.forward * forwardForce * 2 * Time.deltaTime;
+                    rb.position = rb.position + gameObject.transform.forward * forwardForce * 2 * Time.deltaTime;
 
                     wetCount--;
                     if(wetCount == 0){
@@ -31,11 +31,11 @@ public class playerMovement : MonoBehaviour
                     }  
                 }
                 else{
-                    rb.position = rb.position + Camera.main.transform.forward * forwardForce * Time.deltaTime;
+                    rb.position = rb.position + gameObject.transform.forward * forwardForce * Time.deltaTime;
                 }
             }
             else{
-                rb.position = rb.position + Camera.main.transform.forward * forwardForce * 2 * Time.deltaTime;
+                rb.position = rb.position + gameObject.transform.forward * forwardForce * 2 * Time.deltaTime;
             }
 
             //When you stop holding the button, the rotation timer stops
@@ -51,13 +51,13 @@ public class playerMovement : MonoBehaviour
             //Right move
             if (Input.GetKey("d"))
             {
-                rb.position = rb.position + Camera.main.transform.right * 5f * Time.deltaTime;
+                rb.position = rb.position + gameObject.transform.right * 5f * Time.deltaTime;
                 --timerD;
             }
             //Left move
             else if (Input.GetKey("a"))
             {
-                rb.position = rb.position + Camera.main.transform.right * -5f * Time.deltaTime;
+                rb.position = rb.position + gameObject.transform.right * -5f * Time.deltaTime;
                 --timerA;
             }
             //Jump
