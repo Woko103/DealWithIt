@@ -24,6 +24,7 @@ public class LoadLevel : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         int sceneNum = scene.buildIndex;
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneNum);
     }
 }
