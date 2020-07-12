@@ -8,13 +8,10 @@ public class dealGenerator : MonoBehaviour
     public Transform goal;
     private bool dealExists = false;
     List<Vector3> dealPositions = new List<Vector3>();
+    private int dealsLeft = 3;
 
     void Start()
     {
-        //dealPositions.Add(new Vector3(0,0,10));
-        //dealPositions.Add(new Vector3(5,0,13));
-        //dealPositions.Add(new Vector3(-5,0,13));
-
         //FIRST
         dealPositions.Add(new Vector3(-12.5f, 0, 11.06f));
         dealPositions.Add(new Vector3(-12.5f, 0, 27.77f));
@@ -70,24 +67,37 @@ public class dealGenerator : MonoBehaviour
 
     public void createDeal()
     {
-        if (dealPositions.Count > 0)
+        Random.InitState((int)System.DateTime.Now.Ticks);
+        int r = 0;
+        //Depending on deals left, new deals appear in different positions or win
+        switch(dealsLeft)
         {
-            Transform deal = null;
-            int r = Random.Range(0,dealPositions.Count);
+            case 3:
+                r = Random.Range(0,6);
+                break;
+            case 2:
+                r = Random.Range(5,30);
+                break;
+            case 1:
+                r = Random.Range(29,38);
+                break;
+            case 0:
+                FindObjectOfType<gameManager>().winGame();
+                break;
+        }
 
-            deal = Instantiate(dealPrefab, dealPositions[0], Quaternion.identity);
+        if (dealsLeft == 0)
+        {
+            //Creates a new deal in the position specified before
+            Transform deal = null;
+            deal = Instantiate(dealPrefab, dealPositions[r], Quaternion.identity);
             dealPositions.RemoveAt(r);
 
-            //Hacer switch y cambiar 0 por r
-
+            //Crates a goalIndicator above the deal
             goal.transform.position = deal.transform.position + new Vector3(0f,4f,0f);
 
-            //if (dealPositions.Count == 0)
-            //{
-            //    FindObjectOfType<gameManager>().winGame();
-            //}
-            
             dealExists = true;
+            --dealsLeft;
         }
     }
 }

@@ -6,7 +6,7 @@ using TMPro;
 
 public class TimerController : MonoBehaviour
 {
-    public int countTime;
+    public int countTime =60;
     public TextMeshProUGUI display;
 
     private void Start(){
