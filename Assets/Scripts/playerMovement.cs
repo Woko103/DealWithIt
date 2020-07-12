@@ -20,7 +20,7 @@ public class playerMovement : MonoBehaviour
     {
         if (Time.timeScale == 1)
         {
-            if(timeText.countTime > 20){
+            if(timeText.countTime > 30){
                 if(wet){
                     rb.position = rb.position + gameObject.transform.forward * forwardForce * 2 * Time.deltaTime;
 
@@ -34,8 +34,33 @@ public class playerMovement : MonoBehaviour
                     rb.position = rb.position + gameObject.transform.forward * forwardForce * Time.deltaTime;
                 }
             }
+            else if(timeText.countTime > 15){
+                if(wet){
+                    rb.position = rb.position + gameObject.transform.forward * forwardForce * 2 * Time.deltaTime;
+
+                    wetCount--;
+                    if(wetCount == 0){
+                        wet = false;
+                        wetCount = 200;
+                    }  
+                }
+                else{
+                    rb.position = rb.position + gameObject.transform.forward * forwardForce * 1.5f * Time.deltaTime;
+                }
+            }
             else{
-                rb.position = rb.position + gameObject.transform.forward * forwardForce * 2 * Time.deltaTime;
+                if(wet){
+                    rb.position = rb.position + gameObject.transform.forward * forwardForce * 2.5f * Time.deltaTime;
+
+                    wetCount--;
+                    if(wetCount == 0){
+                        wet = false;
+                        wetCount = 200;
+                    }  
+                }
+                else{
+                    rb.position = rb.position + gameObject.transform.forward * forwardForce * 2 * Time.deltaTime;
+                }
             }
 
             //When you stop holding the button, the rotation timer stops
