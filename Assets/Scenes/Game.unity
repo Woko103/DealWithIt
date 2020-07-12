@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 451054955, guid: 67e78bc7e48575d4baf9cffea99e3d4b, type: 3}
+      propertyPath: countTime
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 146033863068626045, guid: 67e78bc7e48575d4baf9cffea99e3d4b,
         type: 3}
       propertyPath: m_textInfo.characterCount
