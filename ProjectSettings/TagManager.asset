@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Deal
   - WetFloor
+  - Can
   layers:
   - Default
   - TransparentFX
