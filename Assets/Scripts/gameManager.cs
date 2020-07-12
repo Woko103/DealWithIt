@@ -7,6 +7,7 @@ public class gameManager : MonoBehaviour
     bool gameHasEnded = false;
     public GameObject loseScreen;
     public GameObject winScreen;
+    public AudioSource inGameMusic;
 
     public void endGame()
     {
@@ -17,11 +18,19 @@ public class gameManager : MonoBehaviour
         }
     }
 
+    void Start(){
+        inGameMusic.loop = true;
+    }
+
+    public void loadInGameMusic(){
+        inGameMusic.Play();
+    }
+
     void showLoseScreen ()
     {
         loseScreen.SetActive(true);
         Time.timeScale = 0f;
-        //mainAudio.Pause();
+        inGameMusic.Pause();
     }
 
     public void winGame()
@@ -37,6 +46,6 @@ public class gameManager : MonoBehaviour
     {
         winScreen.SetActive(true);
         Time.timeScale = 0f;
-        //mainAudio.Pause();
+        inGameMusic.Pause();
     }
 }
