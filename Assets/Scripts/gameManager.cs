@@ -20,6 +20,7 @@ public class gameManager : MonoBehaviour
 
     void Start(){
         inGameMusic.loop = true;
+        inGameMusic.volume = 0.5f;
     }
 
     public void loadInGameMusic(){
