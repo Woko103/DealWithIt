@@ -14,7 +14,7 @@ public class gameManager : MonoBehaviour
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            Invoke("showLoseScreen", 0.5f);
+            Invoke("showLoseScreen", 1f);
         }
     }
 
@@ -43,14 +43,14 @@ public class gameManager : MonoBehaviour
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            Invoke("showWinScreen", 0.5f);
+            Invoke("showWinScreen", 1f);
         }
     }
 
     void showWinScreen ()
     {
         winScreen.SetActive(true);
-        Time.timeScale = 0f;
         inGameMusic.Pause();
+        Time.timeScale = 0f;
     }
 }
