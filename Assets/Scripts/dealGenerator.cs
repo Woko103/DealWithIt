@@ -86,7 +86,7 @@ public class dealGenerator : MonoBehaviour
                 break;
         }
 
-        if (dealsLeft == 0)
+        if (dealsLeft != 0)
         {
             //Creates a new deal in the position specified before
             Transform deal = null;
