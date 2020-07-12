@@ -105,6 +105,7 @@ public class playerMovement : MonoBehaviour
                 timerD = 50;
             }
 
+            //Rotating to left
             if (ArotateTime < 21)
             {
                 rb.rotation *= Quaternion.Euler(0,-4.5f,0);
@@ -112,12 +113,23 @@ public class playerMovement : MonoBehaviour
                 if(ArotateTime == 0)
                     ArotateTime = 21;
             }
+            //Rotating to right
             if (DrotateTime < 21)
             {
                 rb.rotation *= Quaternion.Euler(0,4.5f,0);
                 --DrotateTime;
                 if(DrotateTime == 0)
                     DrotateTime = 21;
+            }
+
+                Debug.Log("x:" + transform.rotation.x);
+                Debug.Log("z:" + transform.rotation.z);
+            //You lose if you rotate to the ground
+            if (transform.rotation.z > 0.8f || transform.rotation.z < -0.8f || transform.rotation.x > 0.7f || transform.rotation.x < -0.7f)
+            {
+                //Debug.Log("x:" + transform.rotation.x);
+                //Debug.Log("z:" + transform.rotation.z);
+                FindObjectOfType<gameManager>().endGame();
             }
         }
     }
