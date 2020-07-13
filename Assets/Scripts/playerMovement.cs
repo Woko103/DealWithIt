@@ -121,14 +121,9 @@ public class playerMovement : MonoBehaviour
                 if(DrotateTime == 0)
                     DrotateTime = 21;
             }
-
-                Debug.Log("x:" + transform.rotation.x);
-                Debug.Log("z:" + transform.rotation.z);
             //You lose if you rotate to the ground
             if (transform.rotation.z > 0.8f || transform.rotation.z < -0.8f || transform.rotation.x > 0.7f || transform.rotation.x < -0.7f)
             {
-                //Debug.Log("x:" + transform.rotation.x);
-                //Debug.Log("z:" + transform.rotation.z);
                 FindObjectOfType<gameManager>().endGame();
             }
         }
